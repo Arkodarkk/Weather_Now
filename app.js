@@ -108,7 +108,7 @@ let apiCall = function (city) {
     };
 
 // Appel par défaut au chargement de la page
-apiCall("Bagnols-sur-Cèze");
+apiCall("Nîmes");
 
 // Appel lors de la soumission du formulaire
 document.querySelector("form").addEventListener("submit", function (e) {
