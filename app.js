@@ -37,12 +37,28 @@ let apiCall = function (city) {
         .then((response) => 
             response.json()
         .then((data) => {
-            console.log (data)
-            document.querySelector("#box1>p").innerHTML = data.name;
-            document.querySelector("#box2>p").innerHTML = `${Math.round(data.main.temp * 10) / 10} °C`;
-            document.querySelector("#box3>p").innerHTML = `${data.main.humidity} %`;
-            document.querySelector("#box4>p").innerHTML = `${Math.round(data.wind.speed * 3.6)} km/h`;
-            //Récupération des icônes et descriptions liées aux conditions climatiques ciblées par la recherche
+// Intégration des données dans leurs box respectives et ajout d'un délai pour permettre un affichage plus smooth
+            document.querySelector("#box1>p").style.opacity = 0;
+            setTimeout(() => {
+                document.querySelector("#box1>p").innerHTML = data.name;
+                document.querySelector("#box1>p").style.opacity = 1;
+            }, 300);
+            document.querySelector("#box2>p").style.opacity = 0;
+            setTimeout(() => {
+                document.querySelector("#box2>p").innerHTML = `${Math.round(data.main.temp * 10) / 10} °C`;
+                document.querySelector("#box2>p").style.opacity = 1;
+            }, 300);
+            document.querySelector("#box3>p").style.opacity = 0;
+            setTimeout(() => {
+                document.querySelector("#box3>p").innerHTML = `${data.main.humidity} %`;
+                document.querySelector("#box3>p").style.opacity = 1;
+            }, 300);
+            document.querySelector("#box4>p").style.opacity = 0;
+            setTimeout(() => {
+                document.querySelector("#box4>p").innerHTML = `${Math.round(data.wind.speed * 3.6)} km/h`;
+                document.querySelector("#box4>p").style.opacity = 1;
+            }, 300);
+//Récupération des icônes et descriptions liées aux conditions climatiques ciblées par la recherche
             if (data.weather[0].icon == "01d" || data.weather[0].icon == "01n") {
                 document.querySelector("#weather-icon").src = "https://openweathermap.org/img/wn/01d@2x.png"
                 document.querySelector("#weather-desc").innerHTML = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
@@ -93,7 +109,7 @@ let apiCall = function (city) {
 // Appel par défaut au chargement de la page
 apiCall("Bagnols-sur-Cèze");
 
-// Appel à la soumission du formulaire
+// Appel lors de la soumission du formulaire
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
     let ville = document.querySelector("#searchtown").value;
