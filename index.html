@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Saira+Condensed:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>Météo</h1>
+    </header>
+    <form action="" method="get">
+        <label for="ville">Entrez une ville</label>
+        <div class="input-group">
+            <input type="text" name="ville" id="searchtown">
+            <button type="submit" id="btn">Rechercher</button>
+        </div>
+    </form>
+    <div class="main-container">
+        <div class="grid-box" size="lg" id="box1">
+            <i class='bx bx-building-house' ></i>
+            <p>ND</p>
+        </div>
+        <div class="grid-box" id="box2">            
+            <i class='bx bxs-thermometer' ></i>
+            <p>ND</p>
+        </div>
+        <div class="grid-box" id="box3">
+            <i class='bx bxs-droplet' ></i>
+            <p>ND</p>
+        </div>
+        <div class="grid-box" id="box4">
+            <i class='bx bx-wind' ></i>
+            <p>ND</p>
+        </div>
+    </div>
+    <div class="weather-icon-wrapper">
+        <img src="./images/sun&cloud.png" alt="icône de soleil caché derrière des nuages" id="weather-icon">
+        <p id="weather-desc">Aujourd'hui</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
