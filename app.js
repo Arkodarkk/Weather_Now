@@ -102,6 +102,7 @@ let apiCall = function (city) {
         }) 
         ).catch(err => {
             alert("Ville introuvable.\nVeuillez vérifier votre saisie");
+            document.querySelector("#searchtown").value = "";
             location.reload();
         })
     };
