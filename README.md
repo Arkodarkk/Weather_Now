@@ -18,8 +18,8 @@ WeatherNow is a weather search web app built using HTML, CSS, and JavaScript. It
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/WeatherNow.git`
-2. Navigate to the project directory: `cd WeatherNow`
+1. Clone the repository: `git clone https://github.com/Arkodarkk/Weather_Now.git`
+2. Navigate to the project directory: `cd Weather_Now`
 
 ## Usage
 
